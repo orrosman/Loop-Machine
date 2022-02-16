@@ -40,6 +40,10 @@ function App() {
 		tracks.forEach((track) => track.pause());
 	};
 
+	const handleLoop = () => {
+		tracks.forEach((track) => (track.loop = !track.loop));
+	};
+
 	return (
 		<Container>
 			{tracks.map((track, i) => (
@@ -56,6 +60,9 @@ function App() {
 				</Col>
 				<Col>
 					<Button onClick={handleStop}>Stop</Button>
+				</Col>
+				<Col>
+					<Button onClick={handleLoop}>Loop</Button>
 				</Col>
 			</Row>
 		</Container>
