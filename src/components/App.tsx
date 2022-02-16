@@ -1,4 +1,4 @@
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import Track from './Track';
 
 const audioFiles = [
@@ -10,7 +10,7 @@ const audioFiles = [
 	'UUHO VOC.mp3',
 	'DRUMS.mp3',
 	'_tambourine_shake_higher.mp3',
-	'ALL TRACK.mp3',
+	// 'ALL TRACK.mp3',
 ];
 
 const colors = [
@@ -25,21 +25,39 @@ const colors = [
 ];
 
 function App() {
-	for (const fileName of audioFiles) {
-		const file = require(`../assets/audio/${fileName}`);
-	}
+	const tracks: HTMLAudioElement[] = [
+		...audioFiles.map((filename) => {
+			const file = require(`../assets/audio/${filename}`);
+			return new Audio(file);
+		}),
+	];
+
+	const handlePlay = () => {
+		tracks.forEach((track) => track.play());
+	};
+
+	const handleStop = () => {
+		tracks.forEach((track) => track.pause());
+	};
 
 	return (
 		<Container>
-			{audioFiles.map((filename, colorIndex) => {
-				return (
-					<Track
-						key={filename}
-						audioFile={filename}
-						color={colors[colorIndex]}
-					/>
-				);
-			})}
+			{tracks.map((track, i) => (
+				<Track
+					key={i}
+					audioFile={track}
+					audioName={audioFiles[i]}
+					color={colors[i]}
+				/>
+			))}
+			<Row>
+				<Col>
+					<Button onClick={handlePlay}>Play</Button>
+				</Col>
+				<Col>
+					<Button onClick={handleStop}>Stop</Button>
+				</Col>
+			</Row>
 		</Container>
 	);
 }

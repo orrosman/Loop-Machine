@@ -1,26 +1,28 @@
+import { useState } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 
 interface TrackProps {
 	color: string;
-	audioFile: string;
+	audioFile: HTMLAudioElement;
+	audioName: string;
 }
 
-function Track({ color, audioFile }: TrackProps) {
-	const file = require(`../assets/audio/${audioFile}`);
-	const audio = new Audio(file);
+function Track({ color, audioFile, audioName }: TrackProps) {
+	const [muted, setMuted] = useState(false);
 
 	const mute = () => {
-		audio.muted = !audio.muted;
+		setMuted(!muted);
+		audioFile.muted = !muted;
 	};
 
 	return (
 		<Row className="m-4" style={{ backgroundColor: color }}>
 			<Col xs={1}>
 				<Button variant="link" onClick={mute}>
-					{audio.muted ? 'Unmute' : 'Mute'}
+					{audioFile.muted ? 'Unmute' : 'Mute'}
 				</Button>
 			</Col>
-			<Col>{audioFile.match(/.+?(?=.mp3)/)}</Col>
+			<Col>{audioName.match(/.+?(?=.mp3)/)}</Col>
 		</Row>
 	);
 }
