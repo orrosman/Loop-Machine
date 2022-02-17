@@ -1,7 +1,7 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Track from './Track';
 import Cursor from './Cursor';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const audioFiles = [
 	'LEAD 1.mp3',
@@ -28,22 +28,23 @@ const colors = [
 
 function App() {
 	const [progress, setProgress] = useState(0);
-
-	const tracks: HTMLAudioElement[] = [
+	const tracks = useRef([
 		...audioFiles.map((filename) => {
 			const file = require(`../assets/audio/${filename}`);
 			return new Audio(file);
 		}),
-	];
+	]);
 
 	useEffect(() => {
-		tracks[0].addEventListener('timeupdate', () => {
-			setProgress((tracks[0].currentTime / tracks[0].duration) * 100);
+		tracks.current[0].addEventListener('timeupdate', () => {
+			setProgress(
+				(tracks.current[0].currentTime / tracks.current[0].duration) * 100
+			);
 		});
 	}, []);
 
 	const handlePlay = () => {
-		tracks.forEach((track) => {
+		tracks.current.forEach((track) => {
 			track.play();
 			track.onended = () => {
 				track.currentTime = 0;
@@ -52,11 +53,11 @@ function App() {
 	};
 
 	const handleStop = () => {
-		tracks.forEach((track) => track.pause());
+		tracks.current.forEach((track) => track.pause());
 	};
 
 	const handleLoop = () => {
-		tracks.forEach((track) => (track.loop = !track.loop));
+		tracks.current.forEach((track) => (track.loop = !track.loop));
 	};
 
 	return (
@@ -66,7 +67,7 @@ function App() {
 					<Cursor progress={progress} />
 				</Col>
 			</Row>
-			{tracks.map((track, i) => (
+			{tracks.current.map((track, i) => (
 				<Track
 					key={i}
 					audioFile={track}
