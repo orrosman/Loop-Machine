@@ -15,11 +15,11 @@ An app that lets you play around with different sounds🎶
 ---
 
 ## Features
-
-- Toggle which tracks will be played with a mute button
-- A cursor to show you the progress of the tracks
-- Play/Pause buttons
-- A "Loop" button - loop through the track and hear them again and again...
+- 📱 Mobile friendly
+- 🔇 Toggle which tracks will be played with a mute button
+- 📈 A cursor to show you the progress of the tracks
+- ⏯ Play/Pause buttons
+- ➿ A "Loop" button - loop through the track and hear them again and again...
 
 ---
 
