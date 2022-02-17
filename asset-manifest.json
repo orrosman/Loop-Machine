@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.1a8a0596.css",
-    "main.js": "/static/js/main.a9fedde6.js",
-    "static/media/ALL TRACK.mp3": "/static/media/ALL TRACK.0fa4445ea8455a4babf4.mp3",
-    "static/media/B VOC.mp3": "/static/media/B VOC.5ffa9906c5972f1fb03c.mp3",
-    "static/media/DRUMS.mp3": "/static/media/DRUMS.f0332952662d2e1f5d15.mp3",
-    "static/media/HE HE VOC.mp3": "/static/media/HE HE VOC.fd659059c1d55320658f.mp3",
-    "static/media/HIGH VOC.mp3": "/static/media/HIGH VOC.f09f6e03383b234370d0.mp3",
-    "static/media/JIBRISH.mp3": "/static/media/JIBRISH.d23f0b604ef55163d7e6.mp3",
-    "static/media/LEAD 1.mp3": "/static/media/LEAD 1.f8658c330b3d07661550.mp3",
-    "static/media/UUHO VOC.mp3": "/static/media/UUHO VOC.bc87006a5f29b4cfa918.mp3",
-    "static/media/_tambourine_shake_higher.mp3": "/static/media/_tambourine_shake_higher.2ceb47bfdbea6e81aae9.mp3",
-    "static/media/github.svg": "/static/media/github.82bea185623373a47a59ec3903d76154.svg",
-    "static/media/linkedin.svg": "/static/media/linkedin.1ad1b099344978cdd77179690eaf1561.svg",
-    "index.html": "/index.html",
-    "static/media/pause-circle-fill.svg": "/static/media/pause-circle-fill.80e3eaff5c74d3c87b2955098159ebdb.svg",
-    "static/media/pause-circle.svg": "/static/media/pause-circle.d3125ae51378779f982c7bb26b9a2864.svg",
-    "static/media/play-circle.svg": "/static/media/play-circle.b69034aca0300f46e2d9937d8454e368.svg",
-    "static/media/play-circle-fill.svg": "/static/media/play-circle-fill.498a7cb269889edd360741f8cd3402e5.svg",
-    "main.1a8a0596.css.map": "/static/css/main.1a8a0596.css.map",
-    "main.a9fedde6.js.map": "/static/js/main.a9fedde6.js.map"
+    "main.css": "/Loop-Machine/static/css/main.1a8a0596.css",
+    "main.js": "/Loop-Machine/static/js/main.daf1fb5a.js",
+    "static/media/ALL TRACK.mp3": "/Loop-Machine/static/media/ALL TRACK.0fa4445ea8455a4babf4.mp3",
+    "static/media/B VOC.mp3": "/Loop-Machine/static/media/B VOC.5ffa9906c5972f1fb03c.mp3",
+    "static/media/DRUMS.mp3": "/Loop-Machine/static/media/DRUMS.f0332952662d2e1f5d15.mp3",
+    "static/media/HE HE VOC.mp3": "/Loop-Machine/static/media/HE HE VOC.fd659059c1d55320658f.mp3",
+    "static/media/HIGH VOC.mp3": "/Loop-Machine/static/media/HIGH VOC.f09f6e03383b234370d0.mp3",
+    "static/media/JIBRISH.mp3": "/Loop-Machine/static/media/JIBRISH.d23f0b604ef55163d7e6.mp3",
+    "static/media/LEAD 1.mp3": "/Loop-Machine/static/media/LEAD 1.f8658c330b3d07661550.mp3",
+    "static/media/UUHO VOC.mp3": "/Loop-Machine/static/media/UUHO VOC.bc87006a5f29b4cfa918.mp3",
+    "static/media/_tambourine_shake_higher.mp3": "/Loop-Machine/static/media/_tambourine_shake_higher.2ceb47bfdbea6e81aae9.mp3",
+    "index.html": "/Loop-Machine/index.html",
+    "static/media/github.svg": "/Loop-Machine/static/media/github.82bea185623373a47a59ec3903d76154.svg",
+    "static/media/linkedin.svg": "/Loop-Machine/static/media/linkedin.1ad1b099344978cdd77179690eaf1561.svg",
+    "static/media/pause-circle-fill.svg": "/Loop-Machine/static/media/pause-circle-fill.80e3eaff5c74d3c87b2955098159ebdb.svg",
+    "static/media/pause-circle.svg": "/Loop-Machine/static/media/pause-circle.d3125ae51378779f982c7bb26b9a2864.svg",
+    "static/media/play-circle.svg": "/Loop-Machine/static/media/play-circle.b69034aca0300f46e2d9937d8454e368.svg",
+    "static/media/play-circle-fill.svg": "/Loop-Machine/static/media/play-circle-fill.498a7cb269889edd360741f8cd3402e5.svg",
+    "main.1a8a0596.css.map": "/Loop-Machine/static/css/main.1a8a0596.css.map",
+    "main.daf1fb5a.js.map": "/Loop-Machine/static/js/main.daf1fb5a.js.map"
   },
   "entrypoints": [
     "static/css/main.1a8a0596.css",
-    "static/js/main.a9fedde6.js"
+    "static/js/main.daf1fb5a.js"
   ]
 }
