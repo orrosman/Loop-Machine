@@ -18,12 +18,13 @@ function Track({ color, audioFile, audioName }: TrackProps) {
 
 	return (
 		<Row className="track m-4" style={{ backgroundColor: color }}>
-			<Col xs={1}>
+			<Col xs={1} className='me-2'>
 				<Button variant="link" onClick={mute}>
 					{audio.current.muted ? 'Unmute' : 'Mute'}
 				</Button>
 			</Col>
-			<Col>{audioName.match(/.+?(?=.mp3)/)}</Col>
+			
+			<Col className='ms-4'>{audioName.match(/.+?(?=.mp3)/)}</Col>
 		</Row>
 	);
 }

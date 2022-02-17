@@ -2,6 +2,10 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import Track from './Track';
 import Cursor from './Cursor';
 import { useState, useEffect, useRef } from 'react';
+import pause from '../assets/images/pause-circle.svg';
+import pauseFill from '../assets/images/pause-circle-fill.svg';
+import play from '../assets/images/play-circle.svg';
+import playFill from '../assets/images/play-circle-fill.svg';
 
 const audioFiles = [
 	'LEAD 1.mp3',
@@ -28,6 +32,9 @@ const colors = [
 
 function App() {
 	const [progress, setProgress] = useState(0);
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [isLooping, setIsLooping] = useState(false);
+
 	const tracks = useRef([
 		...audioFiles.map((filename) => {
 			const file = require(`../assets/audio/${filename}`);
@@ -49,15 +56,18 @@ function App() {
 			track.onended = () => {
 				track.currentTime = 0;
 			};
+			setIsPlaying(true);
 		});
 	};
 
 	const handleStop = () => {
 		tracks.current.forEach((track) => track.pause());
+		setIsPlaying(false);
 	};
 
 	const handleLoop = () => {
 		tracks.current.forEach((track) => (track.loop = !track.loop));
+		setIsLooping(!isLooping);
 	};
 
 	return (
@@ -76,14 +86,20 @@ function App() {
 				/>
 			))}
 			<Row>
-				<Col>
-					<Button onClick={handlePlay}>Play</Button>
+				<Col className="d-flex justify-content-center">
+					<Button onClick={handlePlay}>
+						<img src={isPlaying ? playFill : play} alt="play"></img>
+					</Button>
 				</Col>
-				<Col>
-					<Button onClick={handleStop}>Stop</Button>
+				<Col className="d-flex justify-content-center">
+					<Button onClick={handleStop}>
+						<img src={isPlaying ? pause : pauseFill} alt="pause"></img>
+					</Button>
 				</Col>
-				<Col>
-					<Button onClick={handleLoop}>Loop</Button>
+				<Col className="d-flex justify-content-center">
+					<Button onClick={handleLoop}>
+						{isLooping ? 'Loop ON' : 'Loop OFF'}
+					</Button>
 				</Col>
 			</Row>
 		</Container>
