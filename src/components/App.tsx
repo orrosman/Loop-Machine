@@ -1,5 +1,7 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Track from './Track';
+import Cursor from './Cursor';
+import { useState, useEffect } from 'react';
 
 const audioFiles = [
 	'LEAD 1.mp3',
@@ -25,6 +27,8 @@ const colors = [
 ];
 
 function App() {
+	const [progress, setProgress] = useState(0);
+
 	const tracks: HTMLAudioElement[] = [
 		...audioFiles.map((filename) => {
 			const file = require(`../assets/audio/${filename}`);
@@ -32,8 +36,19 @@ function App() {
 		}),
 	];
 
+	useEffect(() => {
+		tracks[0].addEventListener('timeupdate', () => {
+			setProgress((tracks[0].currentTime / tracks[0].duration) * 100);
+		});
+	}, []);
+
 	const handlePlay = () => {
-		tracks.forEach((track) => track.play());
+		tracks.forEach((track) => {
+			track.play();
+			track.onended = () => {
+				track.currentTime = 0;
+			};
+		});
 	};
 
 	const handleStop = () => {
@@ -45,7 +60,12 @@ function App() {
 	};
 
 	return (
-		<Container>
+		<Container className="position-relative">
+			<Row>
+				<Col>
+					<Cursor progress={progress} />
+				</Col>
+			</Row>
 			{tracks.map((track, i) => (
 				<Track
 					key={i}
